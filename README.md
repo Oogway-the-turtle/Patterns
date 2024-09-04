@@ -1,1 +1,1 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/xitxmh8w8g78k014/branch/main?svg=true)](https://ci.appveyor.com/project/Oogway-the-turtle/patterns/branch/main)
+[![Java CI with Gradle](https://github.com/Oogway-the-turtle/Patterns/actions/workflows/gradle.yml/badge.svg)](https://github.com/Oogway-the-turtle/Patterns/actions/workflows/gradle.yml)
