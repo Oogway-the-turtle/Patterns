@@ -16,14 +16,14 @@ public class DataGenerator {
     }
 
     public static String generateCity() {
-        String[] city = new String[]{"Новосибирск", "Барнаул", "Омск", "Томск", "Екатеринбург", "Томск",
+        String[] cities = new String[]{"Новосибирск", "Барнаул", "Омск", "Томск", "Екатеринбург", "Томск",
                 "Челябинск", "Сыктывкар", "Махачкала", "Грозный", "Брянск", "Вологда",};
-        return city[new Random().nextInt(city.length)];
+        return cities[new Random().nextInt(cities.length)];
     }
 
     public static String generateName(String locale) {
         Faker faker = new Faker(new Locale(locale));
-        return faker.name().fullName();
+        return faker.name().lastName() + " " + faker.name().firstName();
     }
 
     public static String generatePhone(String locale) {
