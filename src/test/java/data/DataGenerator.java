@@ -21,9 +21,10 @@ public class DataGenerator {
         return cities[new Random().nextInt(cities.length)];
     }
 
-    public static String generateName(String locale) {
-        Faker faker = new Faker(new Locale(locale));
-        return faker.name().lastName() + " " + faker.name().firstName();
+    public static String generateName() {
+        Faker faker = new Faker(new Locale("ru"));
+        String name = faker.name().fullName().replace("ё", "е");
+        return name;
     }
 
     public static String generatePhone(String locale) {
@@ -36,7 +37,7 @@ public class DataGenerator {
         }
 
         public static UserInfo generateUser(String locale) {
-            return new UserInfo(generateCity(), generateName(locale), generatePhone(locale));
+            return new UserInfo(generateCity(), generateName(), generatePhone(locale));
         }
     }
 
