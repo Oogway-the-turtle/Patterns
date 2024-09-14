@@ -1,12 +1,15 @@
 package test;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.Keys;
 import data.DataGenerator;
+
 import java.time.Duration;
+
+import io.qameta.allure.selenide.AllureSelenide;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -16,6 +19,16 @@ import static com.codeborne.selenide.Condition.visible;
 
 
 class DeliveryTest {
+
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
+    }
 
     @BeforeEach
     void setup() {
